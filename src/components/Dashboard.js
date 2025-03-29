@@ -6,6 +6,7 @@ import AddAppModal from './AddAppModal';
 import AppDetailModal from './AppDetailModal';
 import Loader from './Loader';
 import ErrorMessage from './ErrorMessage';
+import FirebaseStatus from './FirebaseStatus'; // Neue Komponente importieren
 
 const Dashboard = () => {
   const { apps, loading, error } = useAppContext();
@@ -69,6 +70,9 @@ const Dashboard = () => {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        {/* Firebase-Status-Anzeige einfügen */}
+        <FirebaseStatus />
+
         {loading ? (
           <Loader />
         ) : error ? (
